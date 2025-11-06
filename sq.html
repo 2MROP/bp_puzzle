@@ -117,7 +117,7 @@
         const BACKGROUND_OPACITY = 0.3; // tweak 0.2–0.4 to your taste
 
         // Timer: 1 minute countdown
-        const TOTAL_TIME_SECONDS = 60;
+        const TOTAL_TIME_SECONDS = 40;
 
         // ==================== GAME STATE ====================
         let canvas, ctx;
@@ -387,7 +387,7 @@
 
                     // crisp white border
                     ctx.strokeStyle = '#ffffff';
-                    ctx.lineWidth = 2;
+                    ctx.lineWidth = 1;
                     ctx.setLineDash([]);
                     ctx.strokeRect(
                         Math.round(piece.correctX + 1),
@@ -432,15 +432,16 @@
 
                 // Borders on pieces
                 if (piece === draggedPiece) {
-                    ctx.strokeStyle = 'rgba(74,222,128,0.9)';
-                    ctx.lineWidth = 3;
-                } else if (piece.placed) {
-                    ctx.strokeStyle = 'rgba(74,222,128,0.35)';
-                    ctx.lineWidth = 1.5;
-                } else {
-                    ctx.strokeStyle = 'rgba(255,255,255,0.8)'; // brighter edge for visibility
-                    ctx.lineWidth = 1.5;
-                }
+    ctx.strokeStyle = 'rgba(74,222,128,0.9)';
+    ctx.lineWidth = 2;     // reduced
+} else if (piece.placed) {
+    ctx.strokeStyle = 'rgba(74,222,128,0.35)';
+    ctx.lineWidth = 1;     // reduced
+} else {
+    ctx.strokeStyle = 'rgba(255,255,255,0.8)';
+    ctx.lineWidth = 1;     // reduced
+}
+
 
                 ctx.strokeRect(
                     Math.round(piece.currentX),
