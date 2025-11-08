@@ -548,5 +548,35 @@
             }, 250);
         });
     </script>
+    <div id="staticOverlay">
+  <div class="overlay-box">
+    <h1>No Internet Connection</h1>
+    <p>Please check your connection and try again.</p>
+  </div>
+</div>
+
+<style>
+#staticOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000; /* solid black - hides everything */
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.overlay-box {
+  max-width: 90%;
+}
+</style>
+
 </body>
 </html>
+
